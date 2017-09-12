@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<%@include file="/fragments/navbar.jspf" %>
+<%--<%@include file="/fragments/navbar.jspf" %>--%>
 
 <div id="app">
     <%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
