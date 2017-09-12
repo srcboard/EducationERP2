@@ -3,16 +3,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About ERP</title>
 
-    <%@include file="/fragments/bootstrap.jspf" %>
+    <title>About</title>
+
+    <%--<%@include file="/fragments/bootstrap.jspf" %>--%>
+    <%@include file="/jspf/bootstrap-vue.jspf" %>
+
 </head>
 <body>
 <%@include file="/fragments/navbar.jspf" %>
 
-<div class="container-fluid">
-
+<div id="app">
+    <%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
 </div>
+
+<script>
+    new Vue({
+        el: "#app"
+    })
+</script>
 
 </body>
 </html>
