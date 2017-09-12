@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+    <%@include file="/fragments/bootstrap.jspf" %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

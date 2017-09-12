@@ -4,10 +4,10 @@
 
 <html>
 <head>
-    <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+    <%@include file="/fragments/bootstrap.jspf" %>
 </head>
 <body>
-<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+<%@include file="/fragments/navbar.jspf" %>
 
 <div id="app">
 

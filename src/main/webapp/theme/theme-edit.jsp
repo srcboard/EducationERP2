@@ -4,7 +4,7 @@
     <head>
         <title>Themes edit</title>
         
-        <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+        <%@include file="/fragments/bootstrap.jspf" %>
         
         <style>
             .error{
@@ -16,7 +16,7 @@
        
         <div class="container-fluid">
             <div class="row">
-                <%@include file="/WEB-INF/views/fragments/program-navbar-segment.jspf" %>
+                <%@include file="/fragments/program-navbar-segment.jspf" %>
                 
                 <div class="col-md-9">
                     <div class="page-header">

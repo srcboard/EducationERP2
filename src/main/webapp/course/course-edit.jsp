@@ -15,13 +15,13 @@
                 color: red; 
             }
         </style> 
-        <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+        <%@include file="/fragments/bootstrap.jspf" %>
     </head>
 
     <body>
         <div class="container-fluid">
             <div class="row">
-                <%@include file="/WEB-INF/views/fragments/program-navbar-segment.jspf" %>
+                <%@include file="/fragments/program-navbar-segment.jspf" %>
 
                 <div class="col-md-9">
                     <div class="page-header">
@@ -29,7 +29,7 @@
                     </div>
                     <c:url var="currPath" value="${pageContext.servletContext.contextPath}/course/edit/${course.id}" />
                     
-                    <%@include file="/WEB-INF/views/fragments/course-form-inputs.jspf" %>
+                    <%@include file="/fragments/course-form-inputs.jspf" %>
                         
                  </div>
             </div>       

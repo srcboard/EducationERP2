@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+    <%@include file="/fragments/bootstrap.jspf" %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+<%@include file="/fragments/navbar.jspf" %>
 <div class="container">
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">

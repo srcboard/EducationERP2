@@ -6,10 +6,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+    <%@include file="/fragments/bootstrap.jspf" %>
 </head>
 <body>
-<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+<%@include file="/fragments/navbar.jspf" %>
 
 <div class="container">
     <%--<a href="../../../../java/com/company/filter/EncodingInterceptor.java"></a>--%>

@@ -10,15 +10,15 @@
     <head>
         <title>history of lessons</title>
 
-        <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+        <%@include file="/fragments/bootstrap.jspf" %>
     </head>
     <body>
-        <%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+        <%@include file="/fragments/navbar.jspf" %>
 
         <div class="container">
             <div class="page-header">
                 <h1>Schedule</h1>
-                <%@include file="/WEB-INF/views/schedules/schedule.warning.jspf" %>
+                <%@include file="/schedules/schedule.warning.jspf" %>
                 <div class="dropdown">
                     <form class="navbar-form pull-right" method="POST">
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort by:

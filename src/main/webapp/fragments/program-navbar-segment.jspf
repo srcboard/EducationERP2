@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+<%@include file="/fragments/navbar.jspf" %>
 
 <div class="col-md-3">
     <div class="list-group">
