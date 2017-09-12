@@ -1,0 +1,88 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<form:form role="form" modelAttribute="course" class="form-signin" method="POST" action="${currPath}/save">
+
+    <form:hidden path="id" />
+
+    <div class="form-group">
+        <label for="name">Title</label>
+        <form:input class="form-control" id="name" path="name" /> 
+        <form:errors path="name" cssClass="error" />
+    </div>
+
+    <div class="form-group">
+        <label for="descr">Description</label>
+        <form:textarea class="form-control" id="descr" path="description" rows="6" cols="60" />
+        <form:errors path="description" cssClass="error" />
+    </div>
+
+    
+    <c:choose>
+
+        <c:when test="${empty addTheme}">
+            <div class="form-group">
+                <label for="themesList"><h2>Themes in this course:</h2></label> <br>
+                <c:if test="${course.themeList != null}">
+                    <form:checkboxes path="themeList" items="${course.themeList}"
+                                    itemLabel="name" itemValue="id" element="span class='col-md-6'" id="themesList" /> <br>
+                </c:if>
+            </div>
+            <c:if test="${course.themeList == null}">
+                No themes has not been determined in this Course.<br><br>
+            </c:if>
+
+
+
+            <button name="add_new_theme" class="btn btn-default"
+                    formmethod="POST" formaction="${currPath}/themes">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Add themes in course
+            </button> <br>
+        </c:when>
+        <c:otherwise>
+            <div class="form-group">
+                <label for="themesList"><h2>Select Themes for adding in this course:</h2></label> <br>
+                <form:checkboxes path="themeList" items="${allThemes}" element="span class='col-md-6'"
+                                itemLabel="name" itemValue="id" id="themesList" /> <br>
+            </div>
+        </c:otherwise>
+    </c:choose>
+            
+    <c:choose>
+        <c:when test="${empty addGroup}">
+            <div class="form-group">
+                <label for="studentGroups"><h2>Groups with this course:</h2></label> <br>
+                    <c:if test="${course.studentGroupList != null}">
+                        <form:checkboxes path="studentGroupList" items="${course.studentGroupList}"
+                                        itemLabel="number" itemValue="id" element="span class='col-md-2'" id="studentGroups" /> <br>
+                    </c:if>
+            </div>
+            <c:if test="${course.studentGroupList == null}">
+                No groups has not been binded to this Course.
+            </c:if>
+                   <br><br>
+            <button name="add_groups" class="btn btn-default"
+                    formmethod="POST" formaction="${currPath}/groups">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Add this course to groups
+            </button>
+        </c:when>
+        <c:otherwise>
+            <div class="form-group">
+                <label for="studentGroups"><h2>Select groups that study this course:</h2></label> <br>
+                <form:checkboxes path="studentGroupList" items="${allGroups}" element="span class='col-md-2'"
+                                    itemLabel="number" itemValue="id" id="studentGroups" /> <br>
+            </div>
+        </c:otherwise>
+    </c:choose>
+        <br><br>
+    <button name="save_changes" class="btn btn-primary" value="edit_course"> 
+        <span class="glyphicon glyphicon-ok" style="color: mediumseagreen" aria-hidden="true"></span>
+        Save changes
+    </button>
+
+    <input type="reset" value="Cancel" class="btn btn-default">
+
+    <a href="${header["referer"]}" class="btn btn-default">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Back</a>
+</form:form>

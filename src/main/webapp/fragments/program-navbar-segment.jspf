@@ -1,0 +1,21 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+
+<div class="col-md-3">
+    <div class="list-group">
+
+        <a class="list-group-item" href="${pageContext.servletContext.contextPath}/course/">
+            <h4 class="list-group-item-heading">Course managment</h4>
+            <p class="list-group-item-text">CRUD system for COURSES</p>
+        </a>
+
+        <a class="list-group-item" href="${pageContext.servletContext.contextPath}/theme/">
+            <h4 class="list-group-item-heading">Themes managment</h4>
+            <p class="list-group-item-text">CRUD system for THEMES</p>
+        </a>
+
+    </div>
+</div>

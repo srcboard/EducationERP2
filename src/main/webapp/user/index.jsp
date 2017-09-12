@@ -1,0 +1,48 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <%@include file="/WEB-INF/views/fragments/bootstrap.jspf" %>
+</head>
+<body>
+<%@include file="/WEB-INF/views/fragments/navbar.jspf" %>
+
+<%--<div id="app">--%>
+    <%--<ul>--%>
+        <%--<li v-for="user in users">{{{ user.name }}}</li>--%>
+    <%--</ul>--%>
+    <%--<button v-on:click="reverse">reverse</button>--%>
+<%--</div>--%>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Users list
+            <small>(CRUD)</small>
+        </h1>
+    </div>
+
+    <table class="table table-hover">
+
+        <thead>
+        <th>#</th>
+        <th>Username</th>
+        </thead>
+
+        <tbody>
+
+        <c:forEach items="${userList}" var="user">
+
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.username}</td>
+            </tr>
+
+        </c:forEach>
+
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

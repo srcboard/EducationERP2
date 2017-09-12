@@ -1,0 +1,30 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<body>
+<c:forEach items="${warningList}" var="schedule">
+    <div class="alert alert-danger" role="alert">
+        <strong>Lesson time: ${schedule.lessonTime}</strong>
+        <c:forEach items="${schedule.studentGroupList}" var="group">
+            <form:form modelAttribute="history" method="POST" action="/history/saveHistory">
+                <form:hidden path="id"/>
+
+                <input type="hidden" name="studentGroup" value="${group.id}"/>
+
+                <input type="hidden" name="timestamp" value="${schedule.lessonTime}"/>
+
+                <strong>Group: ${group.number} Trainer: ${group.trainer.name} ${group.trainer.surname}</strong>
+                <c:forEach items="${group.studentList}" var="students">
+
+                    <div class="row">
+                        <form:checkboxes path="studentList" items="${group.studentList}" element="span class='col-md-4'"
+                                         itemValue="id" itemLabel="surname"/>
+                    </div>
+                </c:forEach>
+                <button type="submit" class="btn btn-default">OK</button>
+            </form:form>
+        </c:forEach>
+    </div>
+</c:forEach>
+</body>
