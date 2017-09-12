@@ -48,6 +48,7 @@ public class SecurityController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
+
         if (error != null) {
             model.addAttribute("error", "Username or password is incorrect.");
         }
@@ -55,29 +56,6 @@ public class SecurityController {
         if (logout != null) {
             model.addAttribute("message", "Logged out successfully.");
         }
-
-//        String QUERY = "CREATE TABLE users (\n" +
-//                "  id       SERIAL UNIQUE NOT NULL,\n" +
-//                "  username VARCHAR(255)  NOT NULL,\n" +
-//                "  password VARCHAR(255)  NOT NULL\n" +
-//                ");\n" +
-//                "\n" +
-//                "CREATE TABLE roles (\n" +
-//                "  id   SERIAL UNIQUE NOT NULL,\n" +
-//                "  name VARCHAR(100)  NOT NULL\n" +
-//                ");\n" +
-//                "\n" +
-//                "CREATE TABLE user_roles (\n" +
-//                "  user_id INT NOT NULL,\n" +
-//                "  role_id INT NOT NULL,\n" +
-//                "\n" +
-//                "  FOREIGN KEY (user_id) REFERENCES users (id),\n" +
-//                "  FOREIGN KEY (role_id) REFERENCES roles (id),\n" +
-//                "\n" +
-//                "  UNIQUE (user_id, role_id)\n" +
-//                ");";
-//        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-//        jdbcTemplate.queryForObject(QUERY, String.class);
 
         return "login";
     }

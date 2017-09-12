@@ -21,19 +21,31 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().anyRequest().fullyAuthenticated().and().formLogin()
-                .loginPage("/login").failureUrl("/login?error").permitAll().and()
-                .logout().permitAll();
+        http.authorizeRequests()
+                .antMatchers("/").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+                .antMatchers("/welcome").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+                .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/user/**").access("hasRole('ROLE_ADMIN')")
+                .anyRequest().permitAll()
+                .and()
+                .formLogin().loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/welcome")
+                .usernameParameter("username").passwordParameter("password")
+                .and()
+                .logout().logoutSuccessUrl("/login?logout")
+                .and()
+                .exceptionHandling().accessDeniedPage("/403")
+                .and()
+                .csrf();
 
-//        super.configure(http);
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-//        auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+        auth
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(new BCryptPasswordEncoder());
 
-//        super.configure(auth);
     }
 
     @Bean()

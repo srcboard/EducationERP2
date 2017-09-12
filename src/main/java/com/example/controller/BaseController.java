@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BaseController {
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String index() {
-        return "index";
-    }
+//    @RequestMapping(path = "/", method = RequestMethod.GET)
+//    public String index() {
+//        return "index";
+//    }
 
     @RequestMapping(path = "/about", method = RequestMethod.GET)
     public String about() {
