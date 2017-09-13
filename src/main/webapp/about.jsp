@@ -7,7 +7,8 @@
     <title>About</title>
 
     <%--<%@include file="/fragments/bootstrap.jspf" %>--%>
-    <%@include file="/jspf/bootstrap-vue.jspf" %>
+    <%--<%@include file="/jspf/bootstrap-vue.jspf" %>--%>
+    <%@include file="/jspf/bootstrap-vue-custom.jspf" %>
 
 </head>
 <body>
