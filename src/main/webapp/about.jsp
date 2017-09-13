@@ -6,23 +6,12 @@
 
     <title>About</title>
 
-    <%--<%@include file="/fragments/bootstrap.jspf" %>--%>
-    <%--<%@include file="/jspf/bootstrap-vue.jspf" %>--%>
-    <%@include file="/jspf/bootstrap-vue-custom.jspf" %>
+    <%@include file="/fragments/bootstrap.jspf" %>
 
 </head>
 <body>
-<%--<%@include file="/fragments/navbar.jspf" %>--%>
 
-<div id="app">
-    <%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
-</div>
-
-<script>
-    new Vue({
-        el: "#app"
-    })
-</script>
+<%@include file="/fragments/navbar.jspf" %>
 
 </body>
 </html>

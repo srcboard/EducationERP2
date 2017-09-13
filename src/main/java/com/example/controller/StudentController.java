@@ -41,7 +41,7 @@ public class StudentController {
 
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public ModelAndView getIndex() {
-        ModelAndView mav = new ModelAndView("student/index");
+        ModelAndView mav = new ModelAndView("student/student-index-vue");
         mav.addObject("studentList", studentRepository.findAll());
         return mav;
     }
