@@ -2,11 +2,21 @@
 
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand href="#">Education ERP 2</b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">
 
         <b-nav is-nav-bar>
+            <b-nav-item href="${pageContext.servletContext.contextPath}/student/">
+                <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+                <i class="fa fa-address-card" aria-hidden="true"></i>
+                Students
+            </b-nav-item>
+            <b-nav-item href="#">Link</b-nav-item>
+            <b-nav-item href="#">Link</b-nav-item>
+            <b-nav-item href="#">Link</b-nav-item>
+            <b-nav-item href="#">Link</b-nav-item>
+            <b-nav-item href="#">Link</b-nav-item>
             <b-nav-item href="#">Link</b-nav-item>
             <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-nav>
