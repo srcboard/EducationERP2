@@ -7,9 +7,11 @@ import com.example.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.beans.PropertyEditorSupport;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,15 +25,15 @@ public class StudentController {
     @Autowired
     private StudentGroupRepository groupRepository;
 
-//    @InitBinder
-//    public void initBinder(WebDataBinder binder) {
-//        binder.registerCustomEditor(StudentGroup.class, new PropertyEditorSupport() {
-//            @Override
-//            public void setAsText(String id) throws IllegalArgumentException {
-//                setValue(groupRepository.findOne(Integer.parseInt(id)));
-//            }
-//        });
-//    }
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(StudentGroup.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String id) throws IllegalArgumentException {
+                setValue(groupRepository.findOne(Integer.parseInt(id)));
+            }
+        });
+    }
 
     @ResponseStatus(HttpStatus.PERMANENT_REDIRECT)
     @RequestMapping(path = {"", "/"}, method = RequestMethod.GET)
@@ -53,12 +55,6 @@ public class StudentController {
         mav.addObject("groupsAll", groupRepository.findAll());
         return mav;
     }
-
-//    @RequestMapping(path = "/add/", method = RequestMethod.POST)
-//    public String postAdd(Student student) {
-//        studentRepository.save(student);
-//        return "redirect:/student/";
-//    }
 
     @RequestMapping(path = "/edit/{id}", method = RequestMethod.GET)
     public ModelAndView openForEdit(@PathVariable Integer id) {
@@ -88,21 +84,13 @@ public class StudentController {
         }
 
         studentRepository.save(student);
-
         return "redirect:/student/";
     }
 
     @RequestMapping(path = "/remove/{id}", method = RequestMethod.GET)
     public String sendToRemove(Student student, @PathVariable Integer id) {
-
         studentRepository.delete(student);
-
         return "redirect:/student/";
     }
-
-//    @ExceptionHandler
-//    public void handleException(Exception ex) {
-//        ex.printStackTrace();
-//    }
 
 }

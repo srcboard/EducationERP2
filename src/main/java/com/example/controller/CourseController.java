@@ -56,7 +56,6 @@ public class CourseController {
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public String getIndex(Model model) {
         model.addAttribute("AllCourses", courseRepo.findAll());
-
         return "course/course-index";
     }
 
@@ -64,14 +63,12 @@ public class CourseController {
     public String addNewTheme(Model model) {
         Course course = new Course();
         model.addAttribute("course", course);
-
         return "course/course-add";
     }
 
     @RequestMapping(path = "/edit/{id}", method = RequestMethod.GET)
     public String editCourse(Model model, @PathVariable Integer id) {
         model.addAttribute("course", courseRepo.findOne(id));
-
         return "course/course-edit";
     }
 
@@ -84,7 +81,6 @@ public class CourseController {
         }
 
         courseRepo.save(course);
-
         return "redirect:/course/index";
     }
 
@@ -93,8 +89,8 @@ public class CourseController {
         if (bindingResult.hasErrors()) {
             return "course/course-edit";
         }
-        courseRepo.save(course);
 
+        courseRepo.save(course);
         return "redirect:/course/index";
     }
 

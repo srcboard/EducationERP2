@@ -25,8 +25,6 @@ public class BookmarkInterceptor implements HandlerInterceptor {
             request.setAttribute("ActiveNavbarButton", "program");
         }  else if(requestPath.startsWith("/about")){
             request.setAttribute("ActiveNavbarButton", "about");
-        } else if(requestPath.startsWith("/events")){
-            request.setAttribute("ActiveNavbarButton", "events");
         }
         return true;
     }

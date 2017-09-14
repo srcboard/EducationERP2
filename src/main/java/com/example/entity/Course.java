@@ -33,8 +33,6 @@ public class Course implements Serializable {
         this.id = id;
     }
 
-//    @NotNull(message = "Course's \"Title\" must be filled!")
-//    @Size(min = 2, max = 30, message = "Course's \"Title\" field must be between 2 and 30 characters long.")
     @Column(name = "name", nullable = false)
     public String getName() {
         return name;
@@ -44,8 +42,6 @@ public class Course implements Serializable {
         this.name = name;
     }
 
-//    @Lob
-//    @Size(max = 65535, message = "Course's \"Description\" field must be max 65536 characters long.")
     @Column(name = "description")
     public String getDescription() {
         return description;

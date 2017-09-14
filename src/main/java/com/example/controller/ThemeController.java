@@ -44,7 +44,6 @@ public class ThemeController {
     public String editTheme(@PathVariable Integer id, Model model) {
         model.addAttribute("theme", themeRepository.findOne(id));
         model.addAttribute("trainersAll", trainerRepository.findAll());
-
         return "/theme/theme-edit";
     }
 
@@ -53,10 +52,6 @@ public class ThemeController {
                                    @RequestParam(value = "id", required = false) Integer id,
                                    @RequestParam(value = "trainersList", required = false) Set<Integer> trainersList,
                                    BindingResult bindingResult) {
-
-//        if (bindingResult.hasErrors()) {
-//            return "/theme/theme-edit";
-//        }
 
         if (id == null || id == 0) {
             themeRepository.save(theme);
@@ -73,16 +68,13 @@ public class ThemeController {
         }
 
         themeRepository.save(theme);
-
         return "redirect:/theme/index";
     }
 
     @RequestMapping(path = "/delete/{id}", method = RequestMethod.GET)
     public String deleteTheme(Theme theme, @PathVariable Integer id) {
-
         theme.setTrainerList(null);
         themeRepository.delete(theme);
-
         return "redirect:/theme/index";
     }
 

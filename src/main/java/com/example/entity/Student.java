@@ -28,8 +28,6 @@ public class Student implements Serializable {
     private String surname;
     private Date birthday;
     private Set<StudentGroup> studentGroupList;
-//    private Set<HistoryOfLesson> historyOfLessonList;
-//    private UserInfo userInfo;
 
     public Student() {}
 
@@ -48,7 +46,6 @@ public class Student implements Serializable {
         this.id = id;
     }
 
-//    @Size(min = 2, max = 255, message = "\"Name\" field must be between 2 and 255 characters long")
     @Column(name = "name", length = 255)
     public String getName() {
         return name;
@@ -90,28 +87,6 @@ public class Student implements Serializable {
     public void setStudentGroupList(Set<StudentGroup> studentGroupList) {
         this.studentGroupList = studentGroupList;
     }
-
-//    @JoinTable(name = "students_has_history_of_lessons", joinColumns = {
-//            @JoinColumn(name = "student_id", referencedColumnName = "id", nullable = false)}, inverseJoinColumns = {
-//            @JoinColumn(name = "history_of_lessons_id", referencedColumnName = "id", nullable = false)})
-//    @ManyToMany()
-//    public Set<HistoryOfLesson> getHistoryOfLessonList() {
-//        return historyOfLessonList;
-//    }
-
-//    public void setHistoryOfLessonList(Set<HistoryOfLesson> historyOfLessonList) {
-//        this.historyOfLessonList = historyOfLessonList;
-//    }
-    
-//    @OneToOne
-//    @JoinColumn(name = "userinfo_id")
-//    public UserInfo getUserInfo() {
-//        return userInfo;
-//    }
-
-//    public void setUserInfo(UserInfo userInfo) {
-//        this.userInfo = userInfo;
-//    }
 
     @Override
     public int hashCode() {

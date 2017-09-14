@@ -22,7 +22,7 @@ public class ScheduleController {
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public String getIndex(Model model) {
         model.addAttribute("scheduleList", scheduleRepository.findAll());
-   
         return "schedules/schedule";
     }
+
 }

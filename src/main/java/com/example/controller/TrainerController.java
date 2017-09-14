@@ -34,13 +34,6 @@ public class TrainerController {
         });
     }
 
-//    @ResponseStatus(HttpStatus.PERMANENT_REDIRECT)
-//    @RequestMapping(path = {"/"}, method = RequestMethod.GET)
-//    public String getRoot() {
-//        return "redirect:/trainer/index";
-//    }
-
-
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public ModelAndView getIndex() {
         ModelAndView mav = new ModelAndView("trainers/index");
@@ -66,10 +59,8 @@ public class TrainerController {
 
     @RequestMapping(path = "/delete/{id}", method = RequestMethod.GET)
     public String getDelete(Trainer trainer, @PathVariable Integer id) {
-
         trainer.setThemeList(null);
         trainerRepository.delete(trainer);
-
         return "redirect:/trainer/";
     }
 
@@ -93,7 +84,6 @@ public class TrainerController {
         }
 
         trainerRepository.save(trainer);
-
         return "redirect:/trainer/";
     }
 

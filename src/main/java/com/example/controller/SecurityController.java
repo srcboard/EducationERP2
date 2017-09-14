@@ -27,7 +27,6 @@ public class SecurityController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
         return "registration";
     }
 
@@ -40,9 +39,7 @@ public class SecurityController {
         }
 
         userService.save(userForm);
-
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
-
         return "redirect:/welcome";
     }
 
@@ -69,4 +66,5 @@ public class SecurityController {
     public String admin(Model model) {
         return "admin";
     }
+
 }

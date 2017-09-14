@@ -31,20 +31,16 @@ public class GroupController {
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public ModelAndView getIndex(@RequestParam(name = "id", required = false) Integer id) {
         ModelAndView mav = new ModelAndView("group/grouplist");
-
         mav.addObject("groupList", groupRepository.findAll());
-
         return mav;
     }
 
-//    @Secured({"ROLE_USER"})
     @RequestMapping(path = {"/edit/{id}"}, method = RequestMethod.GET)
     public ModelAndView getGroup(StudentGroup group,
                                  @PathVariable Integer id) {
 
         ModelAndView mav = new ModelAndView("group/groupedit");
         mav.addObject("group", groupRepository.findOne(id));
-
         return mav;
     }
 
@@ -62,9 +58,11 @@ public class GroupController {
 
     @RequestMapping(path = "/edit/{id}", method = RequestMethod.POST)
     public String postGroup(@PathVariable Integer id, StudentGroup studentgroup) {
+
         if (id == null || id < 0) {
             return addGroup(studentgroup);
         }
+
         groupRepository.save(studentgroup);
         return "redirect:/group";
     }

@@ -21,7 +21,6 @@ public class StudentGroup implements Serializable {
     private Date begin;
     private Set<Student> studentList;
     private Set<Course> courseList;
-    //    private Set<HistoryOfLesson> historyOfLessonList;
     private Schedule schedule;
     private Trainer trainer;
 
@@ -56,10 +55,6 @@ public class StudentGroup implements Serializable {
     }
 
     @ManyToMany(mappedBy = "studentGroupList")
-//    @JoinTable(name = "student_groups_has_students", joinColumns = {
-//            @JoinColumn(name = "student_id", referencedColumnName = "id", nullable = false)}, inverseJoinColumns = {
-//            @JoinColumn(name = "student_groups_id", referencedColumnName = "id", nullable = false)})
-//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Set<Student> getStudentList() {
         return studentList;
     }
@@ -76,15 +71,6 @@ public class StudentGroup implements Serializable {
     public void setCourseList(Set<Course> courseList) {
         this.courseList = courseList;
     }
-
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "studentGroup")
-//    public Set<HistoryOfLesson> getHistoryOfLessonList() {
-//        return historyOfLessonList;
-//    }
-//
-//    public void setHistoryOfLessonList(Set<HistoryOfLesson> historyOfLessonList) {
-//        this.historyOfLessonList = historyOfLessonList;
-//    }
 
     @JoinColumn(name = "schedules_id", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)

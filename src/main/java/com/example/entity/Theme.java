@@ -42,7 +42,6 @@ public class Theme {
         this.description = description;
     }
 
-//    @ManyToMany(mappedBy = "themeList", cascade = CascadeType.ALL)
     @JoinTable(name = "trainers_has_themes", joinColumns = {
             @JoinColumn(name = "themes_id", referencedColumnName = "id", nullable = false)}, inverseJoinColumns = {
             @JoinColumn(name = "trainers_id", referencedColumnName = "id", nullable = false)})

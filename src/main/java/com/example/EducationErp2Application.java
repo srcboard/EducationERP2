@@ -9,4 +9,5 @@ public class EducationErp2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(EducationErp2Application.class, args);
 	}
+
 }
