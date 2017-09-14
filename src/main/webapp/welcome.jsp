@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@include file="/fragments/bootstrap.jspf" %>
+    <%@include file="/jspf/bootstrap-vue-libs.jspf" %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,24 +15,26 @@
 
     <title>Welcome</title>
 
-    <link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="/fragments/navbar.jspf" %>
+<%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
+
 <div class="container">
+
+    <br>
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
         <form id="logoutForm" method="POST" action="${contextPath}/logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="#"
+                                                                   onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
 
     </c:if>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/js/bootstrap.min.js"></script>
+
 </body>
 </html>
