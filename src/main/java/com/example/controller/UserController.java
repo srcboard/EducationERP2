@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.repository.UserRepository;
+import com.example.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;

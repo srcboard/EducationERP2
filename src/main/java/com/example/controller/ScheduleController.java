@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.repository.ScheduleRepository;
+import com.example.repo.ScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

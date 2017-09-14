@@ -1,8 +1,8 @@
 package com.example.controller;
 
 import com.example.entity.StudentGroup;
-import com.example.repository.StudentGroupRepository;
-import com.example.repository.StudentRepository;
+import com.example.repo.StudentGroupRepository;
+import com.example.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

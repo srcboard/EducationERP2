@@ -1,4 +1,4 @@
-package com.example.configuration;
+package com.example.config;
 
 import com.example.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

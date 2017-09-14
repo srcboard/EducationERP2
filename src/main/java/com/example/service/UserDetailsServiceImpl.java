@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.repository.UserDao;
+import com.example.repo.UserDao;
 import com.example.entity.Role;
 import com.example.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;

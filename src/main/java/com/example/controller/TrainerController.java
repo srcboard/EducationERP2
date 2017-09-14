@@ -2,8 +2,8 @@ package com.example.controller;
 
 import com.example.entity.Theme;
 import com.example.entity.Trainer;
-import com.example.repository.ThemeRepository;
-import com.example.repository.TrainerRepository;
+import com.example.repo.ThemeRepository;
+import com.example.repo.TrainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
