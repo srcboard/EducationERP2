@@ -1,10 +1,18 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<form id="logoutNavbar" method="POST" action="${contextPath}/logout">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
+
 <div id="navbar">
 
     <b-navbar toggleable="md" type="dark" variant="dark">
 
         <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
-        <b-navbar-brand href="#">
+        <b-navbar-brand href="${contextPath}/">
             <i class="fa fa-home" aria-hidden="true"></i>
             Education ERP 2
         </b-navbar-brand>
@@ -13,34 +21,46 @@
 
             <b-nav is-nav-bar>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/trainer/">
+                <b-nav-item href="${contextPath}/trainer/">
                     <i class="fa fa-id-badge" aria-hidden="true"></i>
                     Trainers
                 </b-nav-item>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/student/">
+                <b-nav-item href="${contextPath}/student/">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     Students
                 </b-nav-item>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/group/">
+                <b-nav-item href="${contextPath}/group/">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Groups
                 </b-nav-item>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/theme/">
+                <b-nav-item href="${contextPath}/theme/">
                     <i class="fa fa-list" aria-hidden="true"></i>
                     Program
                 </b-nav-item>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/schedule/">
+                <b-nav-item href="${contextPath}/schedule/">
                     <i class="fa fa-bell-o" aria-hidden="true"></i>
                     Schedule
                 </b-nav-item>
 
-                <b-nav-item href="${pageContext.servletContext.contextPath}/user/">Users</b-nav-item>
-                <b-nav-item href="${pageContext.servletContext.contextPath}/journal/">Journal</b-nav-item>
-                <b-nav-item href="${pageContext.servletContext.contextPath}/about">About</b-nav-item>
+                <b-nav-item href="${contextPath}/user/">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    Users
+                </b-nav-item>
+
+                <b-nav-item href="${contextPath}/journal/">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Journal
+                </b-nav-item>
+
+                <b-nav-item href="${contextPath}/about">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                    About
+                </b-nav-item>
+
             </b-nav>
 
             <!-- Right aligned nav items -->
@@ -61,10 +81,11 @@
                 <b-nav-item-dropdown right>
                     <!-- Using button-content slot -->
                     <template slot="button-content">
-                        <em>User</em>
+                        <em>{{ user }}</em>
                     </template>
                     <b-dropdown-item href="#">Profile</b-dropdown-item>
-                    <b-dropdown-item href="#">Signout</b-dropdown-item>
+                    <b-dropdown-item href="#" @click.native="document.forms['logoutNavbar'].submit()">Signout
+                    </b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-nav>
 
@@ -76,7 +97,18 @@
 <!-- navbar-1.vue -->
 
 <script>
+
+    var user;
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+    user = '${pageContext.request.userPrincipal.name}';
+    </c:if>
+
     new Vue({
-        el: "#navbar"
+        el: "#navbar",
+        data: {
+            user: user
+        }
     })
+
 </script>

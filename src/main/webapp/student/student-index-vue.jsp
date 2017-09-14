@@ -17,7 +17,12 @@
         <template slot="id" scope="row"></template>
         <template slot="name" scope="row"></template>
         <template slot="surname" scope="row"></template>
-        <template slot="edit" scope="row"><b-btn>Edit</b-btn></template>
+        <template slot="edit" scope="row">
+            <b-btn size="sm" @click.stop="edit(row.item,row.index,$event.target)">Edit</b-btn>
+        </template>
+        <template slot="remove" scope="row">
+            <b-btn>Remove</b-btn>
+        </template>
     </b-table>
 </div>
 
@@ -32,6 +37,7 @@
     o.name = '${item.name}';
     o.surname = '${item.surname}';
     o.edit = null;
+    o.remove = null;
     array.push(o);
 
     </c:forEach>
@@ -45,8 +51,14 @@
             id: {label: 'Id'},
             name: {label: 'Name'},
             surname: {label: 'Surname'},
-            edit: {label: 'Edit'}
+            edit: {label: 'Edit'},
+            remove: {label: "Remove"}
         },
+        methods: {
+            edit(item, index, button) {
+                location.href = "${pageContext.servletContext.contextPath}/student/edit/".concat(item.id);
+            }
+        }
     })
 
 </script>

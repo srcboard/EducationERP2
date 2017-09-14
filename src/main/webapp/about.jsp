@@ -6,12 +6,12 @@
 
     <title>About</title>
 
-    <%@include file="/fragments/bootstrap.jspf" %>
+    <%@include file="/jspf/bootstrap-vue-libs.jspf" %>
 
 </head>
 <body>
 
-<%@include file="/fragments/navbar.jspf" %>
+<%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
 
 </body>
 </html>
