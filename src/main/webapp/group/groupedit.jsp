@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>JSP Page+</title>
-    <%--<sec:csrfMetaTags/>--%>
     <%@include file="/fragments/bootstrap.jspf" %>
 </head>
 <body>

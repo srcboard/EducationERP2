@@ -8,13 +8,6 @@
 <body>
 <%@include file="/fragments/navbar.jspf" %>
 
-<%--<div id="app">--%>
-    <%--<ul>--%>
-        <%--<li v-for="user in users">{{{ user.name }}}</li>--%>
-    <%--</ul>--%>
-    <%--<button v-on:click="reverse">reverse</button>--%>
-<%--</div>--%>
-
 <div class="container">
     <div class="page-header">
         <h1>Users list

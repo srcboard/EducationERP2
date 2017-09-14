@@ -79,7 +79,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script>
-<%--<script src="trainer-edit-app.js"></script>--%>
 <script>
     new Vue({
         el: "#app",

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : courseEdit
-    Created on : Mar 23, 2016, 2:58:24 PM
-    Author     : Vitalij
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

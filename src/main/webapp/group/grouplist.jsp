@@ -4,7 +4,6 @@
 <html>
     <head>
         <title>JSP Page</title>
-        <%--<sec:csrfMetaTags/>--%>
         <%@include file="/fragments/bootstrap.jspf" %>
     </head>
     <body>
@@ -24,7 +23,7 @@
                 <th colspan="2" width="1%"></th>
                 </thead>
                 <tbody>
-                   
+
                     <c:forEach items="${groupList}" var="group">
                         <tr>
                             <td>${group.id}</td>

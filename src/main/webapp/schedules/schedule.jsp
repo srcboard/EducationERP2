@@ -28,10 +28,6 @@
             </div>
             <table class="table table-hover">
                 <thead>
-                    <!--                    <th>Number</th>
-                                        <th>Weak days</th>
-                                        <th>Lesson time</th>
-                                        <th>Trainer</th>-->
                     <tr>
                         <th rowspan="2">ID</th>
                         <th colspan="3">Group</th>

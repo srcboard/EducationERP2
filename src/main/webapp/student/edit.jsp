@@ -12,7 +12,6 @@
 <%@include file="/fragments/navbar.jspf" %>
 
 <div class="container">
-    <%--<a href="../../../../java/com/company/filter/EncodingInterceptor.java"></a>--%>
     <h2>Student edit</h2>
 
     <form:form method="POST" role="form" modelAttribute="student" class="form-signin">
