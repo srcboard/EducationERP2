@@ -11,6 +11,18 @@
 <%@include file="/jspf/bootstrap-vue-navbar.jspf" %>
 
 <div id="app">
+
+    <div class="page-header">
+
+        <h1>Student list
+            <small>(CRUD)</small>
+            <a href="${pageContext.servletContext.contextPath}/student/add/">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </a>
+        </h1>
+
+    </div>
+
     <b-table striped hover
              :items="items"
     >
@@ -21,7 +33,7 @@
             <b-btn size="sm" @click.stop="edit(row.item,row.index,$event.target)">Edit</b-btn>
         </template>
         <template slot="remove" scope="row">
-            <b-btn>Remove</b-btn>
+            <b-btn size="sm" @click.stop="remove(row.item,row.index,$event.target)">Remove</b-btn>
         </template>
     </b-table>
 </div>
@@ -57,6 +69,9 @@
         methods: {
             edit(item, index, button) {
                 location.href = "${pageContext.servletContext.contextPath}/student/edit/".concat(item.id);
+            },
+            remove(item, index, button) {
+                location.href = "${pageContext.servletContext.contextPath}/student/remove/".concat(item.id);
             }
         }
     })

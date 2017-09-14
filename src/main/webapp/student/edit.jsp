@@ -15,30 +15,6 @@
     <%--<a href="../../../../java/com/company/filter/EncodingInterceptor.java"></a>--%>
     <h2>Student edit</h2>
 
-    <div id="app">
-        <h1> {{ name }} </h1>
-        <br>
-        <input type="text" v-model="name"> {{length}}
-
-        <pre>{{ $data | json }}</pre>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script>
-
-    <script>
-        new Vue({
-            el: "#app",
-            data: {
-                name: "Hello world"
-            },
-            computed: {
-                length: function () {
-                    return this.name.length;
-                }
-            }
-        })
-    </script>
-
     <form:form method="POST" role="form" modelAttribute="student" class="form-signin">
 
         <div class="row">
